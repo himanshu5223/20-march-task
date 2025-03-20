@@ -1,5 +1,6 @@
 # Use a more secure Python base image
-FROM python:3.9-slim-bookworm AS builder
+#FROM python:3.9-slim-bookworm AS builder
+FROM python:3.9-slim
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE=1
