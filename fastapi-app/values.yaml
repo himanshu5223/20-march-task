@@ -1,0 +1,33 @@
+replicaCount: 3
+image:
+  repository: 481665095897.dkr.ecr.us-east-1.amazonaws.com/fastapi-app
+  tag: latest
+service:
+  type: ClusterIP
+  port: 8000
+resources:
+  requests:
+    cpu: "100m"
+    memory: "128Mi"
+  limits:
+    cpu: "500m"
+    memory: "512Mi"
+autoscaling:
+  enabled: true
+  minReplicas: 3
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 80
+  targetMemoryUtilizationPercentage: 80
+serviceAccount:
+  create: true  # Set to false if you don't want to create a ServiceAccount
+  name: ""  
+ingress:
+  enabled: false  # Set to true if you want to enable Ingress
+  className: ""   # Ingress class name (e.g., "nginx")
+  annotations: {} # Ingress annotations
+  hosts:
+    - host: chart-example.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []         # TLS configuration
