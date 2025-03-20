@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+requests
+pydantic
+#SQLAlchemy
+psycopg2  # If using PostgreSQL
+aioredis  # If using Redis
+
