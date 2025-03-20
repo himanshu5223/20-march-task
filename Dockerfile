@@ -1,13 +1,13 @@
 # Use a more secure Python base image
 #FROM python:3.9-slim-bookworm AS builder
 #FROM python:3.9-slim
-#FROM python:3.11-slim-bullseye
+FROM python:3.11-slim-bullseye
 
 # If using Python
-FROM python:3.11-slim-bookworm  # Debian 12 "Bookworm" (newer version)
+#FROM python:3.11-slim-bookworm  # Debian 12 "Bookworm" (newer version)
 
 # If using Debian directly
-FROM debian:bookworm-slim
+#FROM debian:bookworm-slim
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE=1
